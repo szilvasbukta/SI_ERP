@@ -95,3 +95,20 @@ def get_genres(file_name):
                         ordered_genres.insert(x, game_info[3])
                         break
         return ordered_genres
+
+
+def when_was_top_sold_fps(file_name):
+    top_sold_game = [0, 0]                      #[year, sold copies]
+    check = 0
+    with open(file_name, 'r') as f:
+        for line in f:
+            game_info = line.split('\t')
+            game_info[1] = float(game_info[1])
+            game_info[2] = int(game_info[2])
+            if game_info[1] > top_sold_game[1] and game_info[3] == 'First-person shooter':
+                top_sold_game[0] = game_info[2]  #year
+                top_sold_game[1] = game_info[1]  #sold copies
+                check = 1
+        if check == 1:
+            return top_sold_game[0]
+            raise ValueError
