@@ -86,11 +86,11 @@ def get_genres(file_name):
     with open(file_name, 'r') as f:
         for line in f:
             game_info = line.split('\t')
-            if (len(ordered_genres) == 0 or (game_info[0]).lower() > (ordered_genres[-1]).lower()) and game_info[3] not in ordered_genres:
-                ordered_genres.append(game_info[0])
+            if (len(ordered_genres) == 0 or (game_info[3]).lower() > (ordered_genres[-1]).lower()) and game_info[3] not in ordered_genres:
+                ordered_genres.append(game_info[3])
             elif game_info[3] not in ordered_genres:
                 for x, title in enumerate(ordered_genres):
-                    if (game_info[0]).lower() < title.lower():
-                        ordered_genres.insert(x, game_info[0])
+                    if (game_info[3]).lower() < title.lower():
+                        ordered_genres.insert(x, game_info[3])
                         break
         return ordered_genres
