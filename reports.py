@@ -81,6 +81,7 @@ def sort_abc(file_name):
                         break
         return ordered_titles
 
+
 def get_genres(file_name):
     ordered_genres = []
     with open(file_name, 'r') as f:
