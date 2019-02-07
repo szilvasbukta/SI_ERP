@@ -111,4 +111,5 @@ def when_was_top_sold_fps(file_name):
                 check = 1
         if check == 1:
             return top_sold_game[0]
+        else:
             raise ValueError
