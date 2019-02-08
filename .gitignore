@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+part2/
 # OS-X
 .DS_Store
 part2/
