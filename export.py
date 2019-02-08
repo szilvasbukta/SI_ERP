@@ -18,4 +18,3 @@ with open('export_file.txt', 'w') as f:
     f.write(str(get_genres('game_stat.txt')))
     f.write('\n')
     f.write(str(when_was_top_sold_fps('game_stat.txt')))
-

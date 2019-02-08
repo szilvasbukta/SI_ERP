@@ -55,7 +55,7 @@ def get_line_number_by_title(file_name, title):
 
     init_check = 0
     with open(file_name, 'r') as f:
-        for x,line in enumerate(f):
+        for x, line in enumerate(f):
             game_info = line.split('\t')
             if game_info[0] == title:
                 init_check = 1
