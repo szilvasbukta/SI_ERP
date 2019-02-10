@@ -22,7 +22,7 @@ def decide(file_name, year):
                 init_check = 1
         if init_check == 1:
             return True
-        else: 
+        else:
             return False
 
 
@@ -33,11 +33,11 @@ def get_latest(file_name):
         for line in f:
             game_info = line.split('\t')
             game_info[2] = int(game_info[2])
-            if game_info[2] > latest_game[1]: 
+            if game_info[2] > latest_game[1]:
                 latest_game[0] = game_info[0]
                 latest_game[1] = game_info[2]
         return latest_game[0]
-            
+
 
 def count_by_genre(file_name, genre):
 
@@ -49,7 +49,7 @@ def count_by_genre(file_name, genre):
             if game_info[4] == genre:
                 count += 1
         return count
-    
+
 
 def get_line_number_by_title(file_name, title):
 
@@ -62,12 +62,12 @@ def get_line_number_by_title(file_name, title):
                 line_number = x + 1
         if init_check == 1:
             return line_number
-        else: 
+        else:
             raise ValueError
 
 
 def sort_abc(file_name):
-    
+
     ordered_titles = []
     with open(file_name, 'r') as f:
         for line in f:
@@ -98,7 +98,7 @@ def get_genres(file_name):
 
 
 def when_was_top_sold_fps(file_name):
-    top_sold_game = [0, 0]                      #[year, sold copies]
+    top_sold_game = [0, 0]  # [year, sold copies]
     check = 0
     with open(file_name, 'r') as f:
         for line in f:
@@ -106,8 +106,8 @@ def when_was_top_sold_fps(file_name):
             game_info[1] = float(game_info[1])
             game_info[2] = int(game_info[2])
             if game_info[1] > top_sold_game[1] and game_info[3] == 'First-person shooter':
-                top_sold_game[0] = game_info[2]  #year
-                top_sold_game[1] = game_info[1]  #sold copies
+                top_sold_game[0] = game_info[2]  # year
+                top_sold_game[1] = game_info[1]  # sold copies
                 check = 1
         if check == 1:
             return top_sold_game[0]
